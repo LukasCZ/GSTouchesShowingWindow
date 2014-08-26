@@ -13,18 +13,21 @@ In your `AppDelegate.m`, import the header:
 ```
 #import “GSTouchesShowingWindow.h”
 ```
-and add the following `-window` method somewhere in your delegate. This will provide the app with our own window instance instead of the default UIWindow.
+and add the following `-window` method. This will provide the app with our own window instance instead of the default UIWindow.
 ```
 - (GSTouchesShowingWindow *)window {
-	GSTouchesShowingWindow *window = [[GSTouchesShowingWindow alloc] init];
-	return window;
+    static GSTouchesShowingWindow *window = nil;
+    if (!window) {
+        window = [[GSTouchesShowingWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    }
+    return window;
 }
 ```
 If you are still using plain old .xib files, you just need to open `MainWindow.xib`, select the window and then change the class in Identity Inspector from UIWindow to `GSTouchesShowingWindow`.
 
 3) That’s it! There is no step three.
 
-# How it actually works
+### How it actually works
 
 Inside the UIWindow subclass, I am just overriding the `-sendEvent` method, processing all the events and adding/moving/removing imageViews based on those events' touches. And then I call `[super sendEvent];` so that the touches are forwarded to the app.
 

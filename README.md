@@ -8,7 +8,7 @@ A simple tool that automatically shows all touches inside your app as they are h
 ### How to set it up
 
 1. First, copy `GSTouchesShowingWindow.h`, `GSTouchesShowingWindow.m` and the `GSTouchImage@2x.png` to your project.
-2. Now, if you are using Storyboard: <br>
+2. a) Now, if you are using Storyboard in your project (and you should), do the following. **If you are not using Storyboard**, skip this step and check 2.b.<br>
 In your `AppDelegate.m`, import the header:
 ```
 #import “GSTouchesShowingWindow.h”
@@ -23,9 +23,10 @@ and add the following `-window` method. This will provide the app with our own w
     return window;
 }
 ```
-If you are still using plain old .xib files, you just need to open `MainWindow.xib`, select the window and then change the class in Identity Inspector from UIWindow to `GSTouchesShowingWindow`.
+2. b) If you are still using plain old .xib files, you only need to open your `MainWindow.xib`, select the window and then change the class in Identity Inspector from UIWindow to `GSTouchesShowingWindow`. Like this:
+<img src="xib_instructions.png">
 
-3) That’s it! There is no step three.
+3. That’s it! There is no step three.
 
 ### How it actually works
 

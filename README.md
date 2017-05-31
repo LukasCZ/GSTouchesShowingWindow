@@ -10,9 +10,8 @@ Short interaction in [Timelines](http://timelinesapp.io), my app for tracking ti
 
 ### How to set it up
 
-1. First, copy `GSTouchesShowingWindow.h`, `GSTouchesShowingWindow.m` and the `GSTouchImageBlue@2x.png` to your project.
-2. 
-  A. Now, if you **are using Storyboard** in your project (and you should), do the following. **If you are not using Storyboard**, skip this step and check 2.b.<br>
+1.) First, copy `GSTouchesShowingWindow.h`, `GSTouchesShowingWindow.m` and the `GSTouchImageBlue@2x.png` to your project.
+2.A) Now, if you **are using Storyboard** in your project (and you should), do the following. **If you are not using Storyboard**, skip this step and check 2.b.<br>
 In your `AppDelegate.m`, import the header:
 ```
 #import “GSTouchesShowingWindow.h”
@@ -27,7 +26,7 @@ and add the following `-window` method. This will provide the app with our own w
     return window;
 }
 ```
-  B. **If you are still using plain old .xib files**, you only need to open your `MainWindow.xib`, select the window and then change the class in Identity Inspector from UIWindow to `GSTouchesShowingWindow`. Like this:
+2.B) **If you are still using plain old .xib files**, you only need to open your `MainWindow.xib`, select the window and then change the class in Identity Inspector from UIWindow to `GSTouchesShowingWindow`. Like this:
 <img src="xib_instructions.png" width="696px">
 
 3. That’s it! There is no step three.

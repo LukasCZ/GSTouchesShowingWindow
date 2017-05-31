@@ -24,6 +24,10 @@
 		162D89B219AC8A3000E30F19 /* GSTouchesShowingWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 162D89AF19AC8A3000E30F19 /* GSTouchesShowingWindow.m */; };
 		162D89B319AC8A3000E30F19 /* GSTouchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 162D89B019AC8A3000E30F19 /* GSTouchImage.png */; };
 		162D89B419AC8A3000E30F19 /* GSTouchImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 162D89B119AC8A3000E30F19 /* GSTouchImage@2x.png */; };
+		164D3EC71EDDC392006C0DCC /* GSTouchImageBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 164D3EC61EDDC392006C0DCC /* GSTouchImageBlue@2x.png */; };
+		164D3EC91EDDC3DB006C0DCC /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 164D3EC81EDDC3DB006C0DCC /* Launch Screen.storyboard */; };
+		164D3EE81EDEEC2F006C0DCC /* GSTouchImageBlue@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 164D3EE71EDEEC2F006C0DCC /* GSTouchImageBlue@3x.png */; };
+		164D3EEA1EDEEC48006C0DCC /* GSTouchImageBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 164D3EE91EDEEC48006C0DCC /* GSTouchImageBlue.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,10 @@
 		162D89AF19AC8A3000E30F19 /* GSTouchesShowingWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GSTouchesShowingWindow.m; path = ../../GSTouchesShowingWindow.m; sourceTree = "<group>"; };
 		162D89B019AC8A3000E30F19 /* GSTouchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GSTouchImage.png; path = ../../GSTouchImage.png; sourceTree = "<group>"; };
 		162D89B119AC8A3000E30F19 /* GSTouchImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GSTouchImage@2x.png"; path = "../../GSTouchImage@2x.png"; sourceTree = "<group>"; };
+		164D3EC61EDDC392006C0DCC /* GSTouchImageBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GSTouchImageBlue@2x.png"; path = "../../GSTouchImageBlue@2x.png"; sourceTree = "<group>"; };
+		164D3EC81EDDC3DB006C0DCC /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		164D3EE71EDEEC2F006C0DCC /* GSTouchImageBlue@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GSTouchImageBlue@3x.png"; path = "../../GSTouchImageBlue@3x.png"; sourceTree = "<group>"; };
+		164D3EE91EDEEC48006C0DCC /* GSTouchImageBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GSTouchImageBlue.png; path = ../../GSTouchImageBlue.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,7 @@
 				162D897E19AA481D00E30F19 /* AppDelegate.h */,
 				162D897F19AA481D00E30F19 /* AppDelegate.m */,
 				162D898119AA481D00E30F19 /* Main.storyboard */,
+				164D3EC81EDDC3DB006C0DCC /* Launch Screen.storyboard */,
 				162D898419AA481D00E30F19 /* ViewController.h */,
 				162D898519AA481D00E30F19 /* ViewController.m */,
 				162D898719AA481D00E30F19 /* Images.xcassets */,
@@ -167,6 +176,9 @@
 				162D89AF19AC8A3000E30F19 /* GSTouchesShowingWindow.m */,
 				162D89B019AC8A3000E30F19 /* GSTouchImage.png */,
 				162D89B119AC8A3000E30F19 /* GSTouchImage@2x.png */,
+				164D3EE91EDEEC48006C0DCC /* GSTouchImageBlue.png */,
+				164D3EC61EDDC392006C0DCC /* GSTouchImageBlue@2x.png */,
+				164D3EE71EDEEC2F006C0DCC /* GSTouchImageBlue@3x.png */,
 			);
 			name = "Touches showing window";
 			sourceTree = "<group>";
@@ -218,6 +230,10 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Glimsoft;
 				TargetAttributes = {
+					162D896B19AA481D00E30F19 = {
+						DevelopmentTeam = BKU6J3C237;
+						ProvisioningStyle = Manual;
+					};
 					162D898C19AA481E00E30F19 = {
 						TestTargetID = 162D896B19AA481D00E30F19;
 					};
@@ -249,9 +265,13 @@
 			files = (
 				162D898819AA481D00E30F19 /* Images.xcassets in Resources */,
 				162D89B419AC8A3000E30F19 /* GSTouchImage@2x.png in Resources */,
+				164D3EC71EDDC392006C0DCC /* GSTouchImageBlue@2x.png in Resources */,
+				164D3EEA1EDEEC48006C0DCC /* GSTouchImageBlue.png in Resources */,
 				162D897A19AA481D00E30F19 /* InfoPlist.strings in Resources */,
 				162D898319AA481D00E30F19 /* Main.storyboard in Resources */,
+				164D3EE81EDEEC2F006C0DCC /* GSTouchImageBlue@3x.png in Resources */,
 				162D89B319AC8A3000E30F19 /* GSTouchImage.png in Resources */,
+				164D3EC91EDDC3DB006C0DCC /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,11 +419,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = BKU6J3C237;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
 				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sample.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c2f1833f-5157-4f9a-8f1c-a864c43d2072";
+				PROVISIONING_PROFILE_SPECIFIER = Wildcard_Dev;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -413,11 +436,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = BKU6J3C237;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleApp/SampleApp-Prefix.pch";
 				INFOPLIST_FILE = "SampleApp/SampleApp-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sample.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c2f1833f-5157-4f9a-8f1c-a864c43d2072";
+				PROVISIONING_PROFILE_SPECIFIER = Wildcard_Dev;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

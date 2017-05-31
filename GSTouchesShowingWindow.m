@@ -8,7 +8,10 @@
 
 #import "GSTouchesShowingWindow.h"
 
-#define TOUCH_IMAGE_NAME        @"GSTouchImage.png"
+#define TOUCH_IMAGE_NAME        @"GSTouchImageBlue.png"
+#define SHORT_TAP_TRESHOLD_DURATION             0.11
+#define SHORT_TAP_INITIAL_CIRCLE_RADIUS         22
+#define SHORT_TAP_FINAL_CIRCLE_RADIUS           57
 
 @interface GSTouchImageViewQueue : NSObject
 
@@ -27,6 +30,7 @@
 
 @property (nonatomic, readonly) GSTouchImageViewQueue *touchImgViewQueue;
 @property (nonatomic, strong) NSMutableDictionary *touchImgViewsDict;
+@property (nonatomic, strong) NSMapTable *touchesStartDatesMapTable;
 
 @end
 
@@ -75,6 +79,8 @@
         touchImgView.alpha = 1.0f;
         touchImgView.transform = CGAffineTransformMakeScale(1, 1);
     }];
+    
+    [self.touchesStartDatesMapTable setObject:[NSDate date] forKey:touch];
 }
 
 - (void)touchMoved:(UITouch *)touch {
@@ -83,6 +89,15 @@
 }
 
 - (void)touchEnded:(UITouch *)touch {
+    
+    NSDate *touchStartDate = [self.touchesStartDatesMapTable objectForKey:touch];
+    NSTimeInterval touchDuration = [[NSDate date] timeIntervalSinceDate:touchStartDate];
+    [self.touchesStartDatesMapTable removeObjectForKey:touch];
+    
+    if (touchDuration < SHORT_TAP_TRESHOLD_DURATION) {
+        [self showExpandingCircleAtPosition:[touch locationInView:self]];
+    }
+    
     UIImageView *touchImgView = [self touchImageViewForTouch:touch];
     [UIView animateWithDuration:0.1
                      animations:^{
@@ -94,6 +109,52 @@
                          [self.touchImgViewQueue pushTouchImageView:touchImgView];
                          [self removeTouchImageViewForTouch:touch];
                      }];
+}
+
+- (void)showExpandingCircleAtPosition:(CGPoint)position {
+    CAShapeLayer *circleLayer = [CAShapeLayer layer];
+    CGFloat initialRadius = SHORT_TAP_INITIAL_CIRCLE_RADIUS;
+    CGFloat finalRadius = SHORT_TAP_FINAL_CIRCLE_RADIUS;
+    circleLayer.position = CGPointMake(position.x - initialRadius, position.y - initialRadius);
+    
+    UIBezierPath *startPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, initialRadius * 2, initialRadius * 2)
+                                                         cornerRadius:initialRadius];
+    CGFloat endPathOrigin = initialRadius - finalRadius;
+    UIBezierPath *endPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(endPathOrigin, endPathOrigin, finalRadius * 2, finalRadius * 2)
+                                                       cornerRadius:finalRadius];
+    circleLayer.path = startPath.CGPath;
+    circleLayer.fillColor = [UIColor clearColor].CGColor;
+    circleLayer.strokeColor = [UIColor colorWithRed:0./255 green:135./255 blue:244./255 alpha:0.8].CGColor;
+    circleLayer.lineWidth = 2.0f;
+    [self.layer addSublayer:circleLayer];
+    
+    [CATransaction begin];
+    [CATransaction setCompletionBlock:^{
+        [circleLayer removeFromSuperlayer];
+    }];
+    
+    // Expanding animation
+    CABasicAnimation *expandingAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
+    expandingAnimation.fromValue = (__bridge id)startPath.CGPath;
+    expandingAnimation.toValue = (__bridge id)endPath.CGPath;
+    expandingAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    expandingAnimation.duration = 0.4;
+    expandingAnimation.repeatCount = 1.0;
+    [circleLayer addAnimation:expandingAnimation forKey:@"expandingAnimation"];
+    circleLayer.path = endPath.CGPath;
+    
+    // Delayed fade out animation
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.20 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        CABasicAnimation *fadingOutAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+        fadingOutAnimation.fromValue = @1.0f;
+        fadingOutAnimation.toValue = @0.0f;
+        fadingOutAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+        fadingOutAnimation.duration = 0.15;
+        [circleLayer addAnimation:fadingOutAnimation forKey:@"fadeOutAnimation"];
+        circleLayer.opacity = 0.0f;
+    });
+    
+    [CATransaction commit];
 }
 
 
@@ -124,6 +185,13 @@
         _touchImgViewsDict = [[NSMutableDictionary alloc] init];
     }
     return _touchImgViewsDict;
+}
+
+- (NSMapTable *)touchesStartDatesMapTable {
+    if (_touchesStartDatesMapTable == nil) {
+        _touchesStartDatesMapTable = [[NSMapTable alloc] init];
+    }
+    return _touchesStartDatesMapTable;
 }
 
 @end

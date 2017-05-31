@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GSTouchesShowingWindow'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = 'UIWindow subclass that makes all touches in your app visible.'
 
   s.description      = <<-DESC
@@ -29,5 +29,7 @@ GSTouchesShowingWindow is a drop-in component (UIWindow subclass) that will visu
   s.resource_bundles = {
     'GSTouchesShowingWindow' => ['GSTouchesShowingWindow/Assets/*.png']
   }
+  
+  s.resources = "GSTouchesShowingWindow/Assets/*.png"
 
 end

@@ -5,6 +5,7 @@ A simple tool that automatically shows all touches inside your app as they are h
 ### Example
 
 <img src="TouchesPreviewTimelines.gif" width="320px">
+
 Short interaction in [Timelines](http://timelinesapp.io), my app for tracking time.
 
 ### How to set it up

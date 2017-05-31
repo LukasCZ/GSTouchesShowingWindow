@@ -8,14 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'GSTouchesShowingWindow'
-  s.version          = '0.1.0'
+  s.version          = '0.1.2'
   s.summary          = 'UIWindow subclass that makes all touches in your app visible.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
 GSTouchesShowingWindow is a drop-in component (UIWindow subclass) that will visualize all touches in your app as they are happening. It's great for creating App Previews or any kind of app videos.
@@ -36,7 +30,4 @@ GSTouchesShowingWindow is a drop-in component (UIWindow subclass) that will visu
     'GSTouchesShowingWindow' => ['GSTouchesShowingWindow/Assets/*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

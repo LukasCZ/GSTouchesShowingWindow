@@ -23,7 +23,7 @@ GSTouchesShowingWindow is a drop-in component (UIWindow subclass) that will visu
 
   s.homepage         = 'https://github.com/LukasCZ/GSTouchesShowingWindow'
   s.screenshots     = 'https://raw.githubusercontent.com/LukasCZ/GSTouchesShowingWindow/master/Sample-touches-screenshot.png', 'https://raw.githubusercontent.com/LukasCZ/GSTouchesShowingWindow/master/TouchesPreviewTimelines.gif'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = { :type => 'MIT', :file => 'LICENSE.md' }
   s.author           = { 'Lukas Petr' => 'lukas@glimsoft.com' }
   s.source           = { :git => 'https://github.com/LukasCZ/GSTouchesShowingWindow.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/luksape'

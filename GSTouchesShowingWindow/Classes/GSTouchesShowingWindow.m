@@ -211,7 +211,8 @@
     if (self = [super init]) {
         self.backingArray = [[NSMutableArray alloc] init];
         for (NSUInteger i = 0; i < count; i++) {
-            UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:TOUCH_IMAGE_NAME]];
+            NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+            UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:TOUCH_IMAGE_NAME inBundle:bundle compatibleWithTraitCollection:nil]];
             [self.backingArray addObject:imgView];
         }
     }

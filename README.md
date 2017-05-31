@@ -1,6 +1,6 @@
 ## GSTouchesShowingWindow
 
-A simple tool that automatically shows all touches inside your app as they are happening, using a circular image indicator. It's useful for creating iOS 8 App Previews, or any kind of app videos where you need to demonstrate some rich user interaction that might be hard to explain otherwise.
+A simple tool that automatically shows all touches inside your app as they are happening, using a circular image indicator. It's useful for creating iOS 8 **App Previews**, or any kind of **app videos** where you need to demonstrate some rich user interaction that might be hard to explain otherwise.
 
 ### Example
 

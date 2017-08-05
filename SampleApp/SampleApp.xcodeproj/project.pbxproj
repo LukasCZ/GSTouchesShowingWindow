@@ -28,6 +28,8 @@
 		164D3EF11EDF130C006C0DCC /* GSTouchImageBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 164D3EEE1EDF130C006C0DCC /* GSTouchImageBlue.png */; };
 		164D3EF21EDF130C006C0DCC /* GSTouchImageBlue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 164D3EEF1EDF130C006C0DCC /* GSTouchImageBlue@2x.png */; };
 		164D3EF31EDF130C006C0DCC /* GSTouchImageBlue@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 164D3EF01EDF130C006C0DCC /* GSTouchImageBlue@3x.png */; };
+		168373EE1F34DD1500756076 /* GSTouchesShowingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 168373EC1F34DD1500756076 /* GSTouchesShowingController.m */; };
+		168373F11F34DD8A00756076 /* GSTouchesShowingGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 168373EF1F34DD8A00756076 /* GSTouchesShowingGestureRecognizer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,10 @@
 		164D3EEE1EDF130C006C0DCC /* GSTouchImageBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GSTouchImageBlue.png; path = ../../GSTouchesShowingWindow/Assets/GSTouchImageBlue.png; sourceTree = "<group>"; };
 		164D3EEF1EDF130C006C0DCC /* GSTouchImageBlue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GSTouchImageBlue@2x.png"; path = "../../GSTouchesShowingWindow/Assets/GSTouchImageBlue@2x.png"; sourceTree = "<group>"; };
 		164D3EF01EDF130C006C0DCC /* GSTouchImageBlue@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "GSTouchImageBlue@3x.png"; path = "../../GSTouchesShowingWindow/Assets/GSTouchImageBlue@3x.png"; sourceTree = "<group>"; };
+		168373EC1F34DD1500756076 /* GSTouchesShowingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GSTouchesShowingController.m; path = ../../GSTouchesShowingWindow/Classes/GSTouchesShowingController.m; sourceTree = "<group>"; };
+		168373ED1F34DD1500756076 /* GSTouchesShowingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GSTouchesShowingController.h; path = ../../GSTouchesShowingWindow/Classes/GSTouchesShowingController.h; sourceTree = "<group>"; };
+		168373EF1F34DD8A00756076 /* GSTouchesShowingGestureRecognizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GSTouchesShowingGestureRecognizer.m; path = ../../GSTouchesShowingWindow/Classes/GSTouchesShowingGestureRecognizer.m; sourceTree = "<group>"; };
+		168373F01F34DD8A00756076 /* GSTouchesShowingGestureRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GSTouchesShowingGestureRecognizer.h; path = ../../GSTouchesShowingWindow/Classes/GSTouchesShowingGestureRecognizer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,15 +178,35 @@
 		162D89A419AA482B00E30F19 /* Touches showing window */ = {
 			isa = PBXGroup;
 			children = (
-				164D3EEB1EDF12F3006C0DCC /* GSTouchesShowingWindow.h */,
-				164D3EEC1EDF12FF006C0DCC /* GSTouchesShowingWindow.m */,
+				163D16621F34DBCF00B047C4 /* Classes */,
+				168373F21F34DDB000756076 /* Assets */,
 				162D89B019AC8A3000E30F19 /* GSTouchImage.png */,
 				162D89B119AC8A3000E30F19 /* GSTouchImage@2x.png */,
+			);
+			name = "Touches showing window";
+			sourceTree = "<group>";
+		};
+		163D16621F34DBCF00B047C4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				168373ED1F34DD1500756076 /* GSTouchesShowingController.h */,
+				168373EC1F34DD1500756076 /* GSTouchesShowingController.m */,
+				164D3EEB1EDF12F3006C0DCC /* GSTouchesShowingWindow.h */,
+				164D3EEC1EDF12FF006C0DCC /* GSTouchesShowingWindow.m */,
+				168373F01F34DD8A00756076 /* GSTouchesShowingGestureRecognizer.h */,
+				168373EF1F34DD8A00756076 /* GSTouchesShowingGestureRecognizer.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		168373F21F34DDB000756076 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
 				164D3EEE1EDF130C006C0DCC /* GSTouchImageBlue.png */,
 				164D3EEF1EDF130C006C0DCC /* GSTouchImageBlue@2x.png */,
 				164D3EF01EDF130C006C0DCC /* GSTouchImageBlue@3x.png */,
 			);
-			name = "Touches showing window";
+			name = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,10 +316,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				168373EE1F34DD1500756076 /* GSTouchesShowingController.m in Sources */,
 				162D898619AA481D00E30F19 /* ViewController.m in Sources */,
 				162D898019AA481D00E30F19 /* AppDelegate.m in Sources */,
 				162D897C19AA481D00E30F19 /* main.m in Sources */,
 				164D3EED1EDF12FF006C0DCC /* GSTouchesShowingWindow.m in Sources */,
+				168373F11F34DD8A00756076 /* GSTouchesShowingGestureRecognizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

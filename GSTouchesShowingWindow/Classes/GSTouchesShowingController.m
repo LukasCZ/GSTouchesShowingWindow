@@ -44,12 +44,12 @@
     return self;
 }
 
-- (void)touchBegan:(UITouch *)touch {
+- (void)touchBegan:(UITouch *)touch view:(UIView *)view {
     
     UIImageView *touchImgView = [self.touchImgViewQueue popTouchImageView];
     
-    touchImgView.center = [touch locationInView:touch.view];
-    [touch.view addSubview:touchImgView];
+    touchImgView.center = [touch locationInView:view];
+    [view addSubview:touchImgView];
     
     touchImgView.alpha = 0.0;
     touchImgView.transform = CGAffineTransformMakeScale(1.13, 1.13);
@@ -63,18 +63,18 @@
     [self.touchesStartDatesMapTable setObject:[NSDate date] forKey:touch];
 }
 
-- (void)touchMoved:(UITouch *)touch {
+- (void)touchMoved:(UITouch *)touch view:(UIView *)view {
     UIImageView *touchImgView = [self touchImageViewForTouch:touch];
-    touchImgView.center = [touch locationInView:touch.view];
+    touchImgView.center = [touch locationInView:view];
 }
 
-- (void)touchEnded:(UITouch *)touch {
+- (void)touchEnded:(UITouch *)touch view:(UIView *)view {
     NSDate *touchStartDate = [self.touchesStartDatesMapTable objectForKey:touch];
     NSTimeInterval touchDuration = [[NSDate date] timeIntervalSinceDate:touchStartDate];
     [self.touchesStartDatesMapTable removeObjectForKey:touch];
     
     if (touchDuration < SHORT_TAP_TRESHOLD_DURATION) {
-        [self showExpandingCircleAtPosition:[touch locationInView:touch.view] inView:touch.view];
+        [self showExpandingCircleAtPosition:[touch locationInView:view] inView:view];
     }
     
     UIImageView *touchImgView = [self touchImageViewForTouch:touch];

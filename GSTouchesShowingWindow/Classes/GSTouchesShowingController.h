@@ -12,8 +12,9 @@
 
 @interface GSTouchesShowingController : NSObject
 
-- (void)touchBegan:(UITouch *)touch;
-- (void)touchMoved:(UITouch *)touch;
-- (void)touchEnded:(UITouch *)touch;
+// The view parameter is the upmost view (either UIWindow, or the GSTouchesShowingGestureRecognizer.view).
+- (void)touchBegan:(UITouch *)touch view:(UIView *)view;
+- (void)touchMoved:(UITouch *)touch view:(UIView *)view;
+- (void)touchEnded:(UITouch *)touch view:(UIView *)view;
 
 @end

@@ -45,16 +45,16 @@
         switch ([touch phase]) {
                 
             case UITouchPhaseBegan:
-                [self.controller touchBegan:touch];
+                [self.controller touchBegan:touch view:self];
                 break;
                 
             case UITouchPhaseMoved:
-                [self.controller touchMoved:touch];
+                [self.controller touchMoved:touch view:self];
                 break;
                 
             case UITouchPhaseEnded:
             case UITouchPhaseCancelled:
-                [self.controller touchEnded:touch];
+                [self.controller touchEnded:touch view:self];
                 break;
                 
             default:
